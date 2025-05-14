@@ -2,7 +2,8 @@ import { StrictMode } from 'react'
 import React from 'react'
 import {Provider} from 'react-redux'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './routes/App.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Bag from './routes/Bag.jsx';
