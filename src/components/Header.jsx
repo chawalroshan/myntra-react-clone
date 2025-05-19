@@ -2,8 +2,12 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { FaHeartbeat } from "react-icons/fa";
 import { IoBagCheckSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+    
+    const bag = useSelector ((store) => store.bag);
+
     return(
     <>
         <header>
@@ -24,22 +28,19 @@ const Header = () => {
         </div>
         <div className="action_bar">
             <div className="action_container">
-                {/* <span className="material-symbols-outlined action_icon">person</span> */}
                 <BsFillPersonFill />
                 <span className="action_name">Profile</span>
             </div>
 
             <div className="action_container">
-                {/* <span className="material-symbols-outlined action_icon">favorite</span> */}
                 <FaHeartbeat />
                 <span className="action_name">Wishlist</span>
             </div>
 
             <Link  className="action_container" to='/bag'>
-                {/* <span className="material-symbols-outlined action_icon">shopping_bag</span> */}
                 <IoBagCheckSharp />
                 <span className="action_name">Bag</span>
-                <span className="bag-item-count">0</span>
+                <span className="bag-item-count">{bag.length}</span>
             </Link>
         </div>
     </header>
